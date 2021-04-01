@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="WindowView">
+        <attr name="android:text" format="string" />
+        <!-- Specifies the basic width of the Task Menu view.  This is an optional attribute.
+             This defaults to match_parent. Its value may be a dimension (such as "12dip")
+             for a constant width or one of the special constants. -->
+        <attr name="window_layout_width" format="dimension">
+            <!-- The view should be only big enough to enclose its content (plus padding). -->
+            <enum name="wrap_content" value="-2" />
+        </attr>
+
+        <!-- Specifies the basic height of the Task Menu view.  This is an optional attribute.
+             This defaults to match_parent. Its value may be a dimension (such as "12dip")
+             for a constant width or one of the special constants. -->
+        <attr name="window_layout_height" format="dimension">
+            <!-- The view should be only big enough to enclose its content (plus padding). -->
+            <enum name="wrap_content" value="-2" />
+        </attr>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:drawable/editbox_background"
+    android:padding="8dp"
+    android:clickable="true">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/error_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/fragment_class_list_not_found_classes"
+        android:textSize="18sp"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@color/cardview_dark_background"
+        >
+        <TextView
+            android:id="@+id/DatabaseStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Database: None"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Packages Scanned"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <ProgressBar
+            android:id="@+id/PackageProgressBar"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progress="0"
+            android:max="0"
+            android:backgroundTint="@color/cardview_light_background"/>
+        <TextView
+            android:id="@+id/PackagesScannedProgressBarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/0"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginBottom="30dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Packages Skipped"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <TextView
+            android:id="@+id/PackagesSkippedProgressBarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Package Being Scanned"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <TextView
+            android:id="@+id/PackageBeingScanned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginBottom="30dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Class Tree Depth"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <TextView
+            android:id="@+id/ClassTreeDepth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginBottom="30dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dex Files Found"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <TextView
+            android:id="@+id/DexFilesFound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empty Dex Files Found"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <TextView
+            android:id="@+id/EmptyDexFilesFound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dex Classes Found"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <TextView
+            android:id="@+id/DexClassesFound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginBottom="30dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classes Quick Scanned"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <ProgressBar
+            android:id="@+id/ClassQuickProgressBar"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progress="0"
+            android:max="0"
+            android:backgroundTint="@color/cardview_light_background"/>
+        <TextView
+            android:id="@+id/ClassesQuickScannedProgressBarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/0"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classes Fully Scanned"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <ProgressBar
+            android:id="@+id/ClassFullProgressBar"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progress="0"
+            android:max="0"
+            android:backgroundTint="@color/cardview_light_background"/>
+        <TextView
+            android:id="@+id/ClassesFullyScannedProgressBarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/0"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classes Skipped"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <ProgressBar
+            android:id="@+id/ClassSkipProgressBar"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:progress="0"
+            android:max="0"
+            android:backgroundTint="@color/cardview_light_background"/>
+        <TextView
+            android:id="@+id/ClassesSkippedProgressBarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/0"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginBottom="30dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vst's Found"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            />
+        <TextView
+            android:id="@+id/VstFound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginBottom="10dp"
+            />
+    </LinearLayout>
+</FrameLayout>

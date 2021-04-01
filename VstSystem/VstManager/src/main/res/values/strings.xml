@@ -1,0 +1,4 @@
+<resources>
+    <string name="fragment_class_list_not_found_classes">The class does not exist in the package or could not be read correctly.</string>
+    <string name="type_resource">type resource</string>
+</resources>
