@@ -49,7 +49,7 @@ public:
         static jstring newString(JNIEnv * env, const std::string & string);
 
         /**
-         * @return an allocated string, this must be freed by calling deleteJniStringUTF(&ReturnedString)
+         * @return an allocated, null-terminated string, this must be freed by calling deleteJniStringUTF(&ReturnedString)
          *
          * @code // allocate a new jniString
          * char * jniString = newJniString(env, javaString);
@@ -66,7 +66,7 @@ public:
          * assert(jniString[jniStringLength] == '\0');
          * @endcode
          */
-        static const char *newJniStringUTF(JNIEnv *env, jstring from, size_t *len);
+        static char *newJniStringUTF(JNIEnv *env, jstring from, size_t *len);
 
         /**
          * this is just
@@ -74,7 +74,7 @@ public:
          * return newJniStringUTF(env, from, &unused);
          * @endcode
          *
-         * @return an allocated string, this must be freed by calling deleteJniStringUTF(&ReturnedString)
+         * @return an allocated, null-terminated string, this must be freed by calling deleteJniStringUTF(&ReturnedString)
          *
          * @code // allocate a new jniString
          * char * jniString = newJniString(env, javaString);
@@ -85,7 +85,7 @@ public:
          * // jniString is now de-allocated and set to nullptr
          * @endcode
          */
-        static const char *newJniStringUTF(JNIEnv *env, jstring from);
+        static char *newJniStringUTF(JNIEnv *env, jstring from);
 
         /**
          * de-allocates a jniString returned by newJniStringUTF
@@ -100,7 +100,7 @@ public:
          * // jniString is now de-allocated and set to nullptr
          * @endcode
          */
-        static void deleteJniStringUTF(const char **string);
+        static void deleteJniStringUTF(char **string);
 
         /**
          * @return the length of a java string
