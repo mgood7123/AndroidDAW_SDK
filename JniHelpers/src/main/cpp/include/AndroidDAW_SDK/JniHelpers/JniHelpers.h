@@ -49,14 +49,14 @@ public:
         static jstring newString(JNIEnv * env, const std::string & string);
 
         /**
-         * @return an allocated, null-terminated string, this must be freed by calling deleteJniStringUTF(&ReturnedString)
+         * @return an allocated, null-terminated string, this must be freed by calling deleteJniStringUTF(ReturnedString)
          *
          * @code // allocate a new jniString
          * char * jniString = newJniString(env, javaString);
          * // jniString is now allocated
          * // do something with the jniString
          * // de-allocate the jnistring
-         * deleteJniString(&jniString);
+         * deleteJniStringUTF(jniString);
          * // jniString is now de-allocated and set to nullptr
          * @endcode
          *
@@ -74,14 +74,14 @@ public:
          * return newJniStringUTF(env, from, &unused);
          * @endcode
          *
-         * @return an allocated, null-terminated string, this must be freed by calling deleteJniStringUTF(&ReturnedString)
+         * @return an allocated, null-terminated string, this must be freed by calling deleteJniStringUTF(ReturnedString)
          *
          * @code // allocate a new jniString
          * char * jniString = newJniString(env, javaString);
          * // jniString is now allocated
          * // do something with the jniString
          * // de-allocate the jnistring
-         * deleteJniString(&jniString);
+         * deleteJniStringUTF(jniString);
          * // jniString is now de-allocated and set to nullptr
          * @endcode
          */
@@ -96,11 +96,11 @@ public:
          * // jniString is now allocated
          * // do something with the jniString
          * // de-allocate the jnistring
-         * deleteJniString(&jniString);
+         * deleteJniStringUTF(jniString);
          * // jniString is now de-allocated and set to nullptr
          * @endcode
          */
-        static void deleteJniStringUTF(char **string);
+        static void deleteJniStringUTF(char *& string);
 
         /**
          * @return the length of a java string

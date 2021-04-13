@@ -69,7 +69,7 @@ jstring JniHelpers::Strings::newString(JNIEnv * env, const std::string & string)
 char * JniHelpers::Strings::newJniStringUTF(JNIEnv *env, jstring from, size_t * len) {
     // TODO: error check
     *len = jniStrlenUTF(env, from);
-    char * ret = new char[*len];
+    char * ret = new char[*len + 1];
     jboolean val;
     const char * tmp = env->GetStringUTFChars(from, &val);
     memcpy(ret, tmp, *len);
@@ -83,10 +83,9 @@ char *JniHelpers::Strings::newJniStringUTF(JNIEnv *env, jstring from) {
     return newJniStringUTF(env, from, &unused);
 }
 
-void JniHelpers::Strings::deleteJniStringUTF(char ** string) {
-    char * stringToDelete = *string;
-    delete[] stringToDelete;
-    *string = nullptr;
+void JniHelpers::Strings::deleteJniStringUTF(char * & string) {
+    delete[] string;
+    string = nullptr;
 }
 
 size_t JniHelpers::Strings::jniStrlenUTF(JNIEnv *env, jstring from) {
@@ -98,7 +97,7 @@ void JniHelpers::Strings::copyJniStringUTF(JNIEnv *env, jstring from, char * to)
     size_t len;
     char * str = newJniStringUTF(env, from, &len);
     memcpy(to, str, len);
-    deleteJniStringUTF(&str);
+    deleteJniStringUTF(str);
 }
 
 int JniHelpers::Exceptions::throwException(JNIEnv* env, const char * exception, char const* message) {

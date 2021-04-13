@@ -5,8 +5,6 @@ project("AndroidDAW_SDK__Plugin")
 set(CMAKE_CXX_FLAGS_DEBUG   "${CMAKE_CXX_FLAGS_DEBUG}   --optimize -O0 -g3")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} --optimize -Ofast -g0")
 
-# https://developer.android.com/ndk/guides/asan#cmake
-
 include_directories(include)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../../../CMAKE_HELPER ${CMAKE_CURRENT_BINARY_DIR}/CMAKE_HELPER)
 set_AndroidDAW_SDK_ROOT(${CMAKE_CURRENT_SOURCE_DIR}/../../../..)
