@@ -30,9 +30,13 @@ android {
 
 dependencies {
 
-    api project(':AndroidDAW_SDK:JNI_CPP_API')
-    api project(':AndroidDAW_SDK:Plugin')
+    // for plugin hosts
     api project(':AndroidDAW_SDK:VstSystem')
+
+    // for plugins
+    // Plugin includes JNI_CPP_API which includes JniHelpers
+    api project(':AndroidDAW_SDK:Plugin')
+
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     testImplementation 'junit:junit:4.+'

@@ -42,7 +42,8 @@ android {
 
 dependencies {
 
-    api project(':AndroidDAW_SDK:JniHelpers')
+    // JNI_CPP_API includes JniHelpers
+    api project(':AndroidDAW_SDK:JNI_CPP_API')
     api project(':AndroidDAW_SDK:Log')
     api project(':AndroidDAW_SDK:Midi')
     api project(':AndroidDAW_SDK:RingBuffer')
