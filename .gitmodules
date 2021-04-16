@@ -1,3 +1,6 @@
 [submodule "VstSystem/libOverview"]
 	path = VstSystem/libOverview
 	url = http://github.com/mgood7123/libOverview
+[submodule "UI/src/main/java/smallville7123/AndroidDAW/SDK/UI/ScrollBar"]
+	path = UI/src/main/java/smallville7123/AndroidDAW/SDK/UI/ScrollBar
+	url = http://github.com/mgood7123/Scroll-Bar

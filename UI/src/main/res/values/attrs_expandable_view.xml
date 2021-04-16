@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="ExpandableView">
+        <attr name="expanded" format="boolean" />
+        <attr name="replaceHeaderWhenExpanded" format="boolean" />
+    </declare-styleable>
+</resources>

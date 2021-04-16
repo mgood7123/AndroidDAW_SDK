@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="SpinnerView">
+        <!-- Reference to an array resource that will populate a list/adapter. -->
+        <attr name="names" format="reference" />
+        <!-- Reference to an array resource that will populate a list/adapter. -->
+        <attr name="layouts" format="reference" />
+    </declare-styleable>
+</resources>
