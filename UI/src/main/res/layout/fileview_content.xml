@@ -62,16 +62,21 @@
         app:replaceHeaderWhenExpanded="false"
         android:orientation="vertical"
         >
-        <include
-            layout="@layout/fileview_filter_icon"
-            android:layout_height="80dp"
+        <!--        header -->
+        <ImageView
+            android:id="@+id/fileView_filterIcon"
             android:layout_width="80dp"
-            />
+            android:layout_height="80dp"
+            android:src="@android:drawable/ic_menu_manage"
+            android:tint="#DA0B0B"
+            android:tintMode="multiply">
+        </ImageView>
+
+        <!--        content, this is what appears when expanded -->
         <include
             layout="@layout/fileview_filter_content"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             />
     </smallville7123.AndroidDAW.SDK.UI.ExpandableView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
